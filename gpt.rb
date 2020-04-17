@@ -2,16 +2,16 @@
 class Gpt < Formula
   desc "Manipulates the route files for the Greater Patagonia Trail."
   homepage ""
-  version "0.0.17"
+  version "0.0.20"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/dave/gpt/releases/download/v0.0.17/gpt_0.0.17_Darwin_x86_64.tar.gz"
-    sha256 "dac8ad965a3e620a59f23a36cdd2dd40128ce0a6e3fd9dd25aec165d771e6ce3"
+    url "https://github.com/dave/gpt/releases/download/v0.0.20/gpt_0.0.20_Darwin_x86_64.tar.gz"
+    sha256 "760a876912ff3a255a6e57d0552e5f843f489e45a68704b5602e6841379f7bf0"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/dave/gpt/releases/download/v0.0.17/gpt_0.0.17_Linux_x86_64.tar.gz"
-      sha256 "7f145c4a53679013a440dc4cb7a0ec22cabdd04c3df0b03d6de05f58965fed05"
+      url "https://github.com/dave/gpt/releases/download/v0.0.20/gpt_0.0.20_Linux_x86_64.tar.gz"
+      sha256 "dff22577ea270525b3136de17aa911ff17f3de7a0ad2dc0daffc1203a4079bcc"
     end
   end
 
