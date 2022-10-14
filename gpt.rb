@@ -5,27 +5,43 @@
 class Gpt < Formula
   desc "Manipulates the route files for the Greater Patagonia Trail."
   homepage ""
-  version "0.2.0"
-  bottle :unneeded
+  version "0.2.2"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/dave/gpt/releases/download/v0.2.0/gpt_0.2.0_Darwin_x86_64.tar.gz"
-    sha256 "f563c8023bcfdd0a9ee10c87b5ea426b6cc24f934b0017fe324279b59ab73427"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/dave/gpt/releases/download/v0.2.0/gpt_0.2.0_Darwin_arm64.tar.gz"
-    sha256 "4388737032b52ad9a800719556d8cafd5682e67c769c60d6cff3e30dc0d8053e"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/dave/gpt/releases/download/v0.2.0/gpt_0.2.0_Linux_x86_64.tar.gz"
-    sha256 "7d3879969c5bea72a97dad7f2635647d70ba637b5dd7e10976a0df7525ff92c6"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/dave/gpt/releases/download/v0.2.0/gpt_0.2.0_Linux_arm64.tar.gz"
-    sha256 "6faec064998db5514b8a7be532ed5be95364d72a9b09b54b57c54c810606a009"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Darwin_arm64.tar.gz"
+      sha256 "a2e7ab6a033ca157c77e7849ff1a10f65080b683316b3af3fdfbfcdc12608b14"
+
+      def install
+        bin.install "gpt"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Darwin_x86_64.tar.gz"
+      sha256 "abf14bb1b1f38105b3eda2fb6d4d5d364662bf6e3c468308efff314abf17fefc"
+
+      def install
+        bin.install "gpt"
+      end
+    end
   end
 
-  def install
-    bin.install "gpt"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Linux_arm64.tar.gz"
+      sha256 "b6837c1f18c9ce0164a480680231b96471f1a3dacd57ea85c7a591257ba8e60c"
+
+      def install
+        bin.install "gpt"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Linux_x86_64.tar.gz"
+      sha256 "ad391e4a58e5ec2f4edcdb26a222e804033eb3b894d46eb74de70b02a090bab6"
+
+      def install
+        bin.install "gpt"
+      end
+    end
   end
 end
