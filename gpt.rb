@@ -5,20 +5,20 @@
 class Gpt < Formula
   desc "Manipulates the route files for the Greater Patagonia Trail."
   homepage ""
-  version "0.2.2"
+  version "0.3.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Darwin_arm64.tar.gz"
-      sha256 "a2e7ab6a033ca157c77e7849ff1a10f65080b683316b3af3fdfbfcdc12608b14"
+      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Darwin_arm64.tar.gz"
+      sha256 "eb7cb9fe547bb9303adfbe6e8eac0e74aee8bb62c4480a0da4c40290e98ef813"
 
       def install
         bin.install "gpt"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Darwin_x86_64.tar.gz"
-      sha256 "abf14bb1b1f38105b3eda2fb6d4d5d364662bf6e3c468308efff314abf17fefc"
+      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Darwin_x86_64.tar.gz"
+      sha256 "375bb88e8aa615476a0994242ac10f4c86d4397ee4a18ea33a01a8154f40ac77"
 
       def install
         bin.install "gpt"
@@ -28,16 +28,16 @@ class Gpt < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Linux_arm64.tar.gz"
-      sha256 "b6837c1f18c9ce0164a480680231b96471f1a3dacd57ea85c7a591257ba8e60c"
+      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Linux_arm64.tar.gz"
+      sha256 "02bb00f6d55dd368717cc1ecf0afbc872da0c8c7ad9315e050858eae6e710413"
 
       def install
         bin.install "gpt"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/dave/gpt/releases/download/v0.2.2/gpt_0.2.2_Linux_x86_64.tar.gz"
-      sha256 "ad391e4a58e5ec2f4edcdb26a222e804033eb3b894d46eb74de70b02a090bab6"
+      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Linux_x86_64.tar.gz"
+      sha256 "dbaeb4370d09afd8f8506ced63fc1f74f1f1b4c35c319d61b3f78128f5f816f3"
 
       def install
         bin.install "gpt"
