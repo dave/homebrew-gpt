@@ -5,20 +5,20 @@
 class Gpt < Formula
   desc "Manipulates the route files for the Greater Patagonia Trail."
   homepage ""
-  version "0.3.0"
+  version "0.3.3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Darwin_arm64.tar.gz"
-      sha256 "eb7cb9fe547bb9303adfbe6e8eac0e74aee8bb62c4480a0da4c40290e98ef813"
+    on_intel do
+      url "https://github.com/dave/gpt/releases/download/v0.3.3/gpt_0.3.3_darwin_amd64.tar.gz"
+      sha256 "e503f68d122c991c92bc5c9cb92217417d9a8da1cf6b480d018dd13566c0707c"
 
       def install
         bin.install "gpt"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Darwin_x86_64.tar.gz"
-      sha256 "375bb88e8aa615476a0994242ac10f4c86d4397ee4a18ea33a01a8154f40ac77"
+    on_arm do
+      url "https://github.com/dave/gpt/releases/download/v0.3.3/gpt_0.3.3_darwin_arm64.tar.gz"
+      sha256 "e541eaf7b316de9940be44d55ec815ab073e8ae666982d019c2e80b3c1da0335"
 
       def install
         bin.install "gpt"
@@ -27,20 +27,24 @@ class Gpt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Linux_arm64.tar.gz"
-      sha256 "02bb00f6d55dd368717cc1ecf0afbc872da0c8c7ad9315e050858eae6e710413"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/dave/gpt/releases/download/v0.3.3/gpt_0.3.3_linux_amd64.tar.gz"
+        sha256 "87474aafae3204bbc17f0960bd57676e5302b342a6cbd969ece731655959126b"
 
-      def install
-        bin.install "gpt"
+        def install
+          bin.install "gpt"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dave/gpt/releases/download/v0.3.0/gpt_0.3.0_Linux_x86_64.tar.gz"
-      sha256 "dbaeb4370d09afd8f8506ced63fc1f74f1f1b4c35c319d61b3f78128f5f816f3"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/dave/gpt/releases/download/v0.3.3/gpt_0.3.3_linux_arm64.tar.gz"
+        sha256 "6b96bc653392b629a230149004ab04d0bc6613fea641224c072183cb04328045"
 
-      def install
-        bin.install "gpt"
+        def install
+          bin.install "gpt"
+        end
       end
     end
   end
