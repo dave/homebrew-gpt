@@ -5,20 +5,20 @@
 class Gpt < Formula
   desc "Manipulates the route files for the Greater Patagonia Trail."
   homepage ""
-  version "0.3.4"
+  version "0.3.5"
 
   on_macos do
     on_intel do
-      url "https://github.com/dave/gpt/releases/download/v0.3.4/gpt_0.3.4_darwin_amd64.tar.gz"
-      sha256 "3245e7ac7d51867622b427744a32d9a2813d86d7a40cf13b13b75e1062992c5c"
+      url "https://github.com/dave/gpt/releases/download/v0.3.5/gpt_0.3.5_darwin_amd64.tar.gz"
+      sha256 "f5ee0e8193a359f60f997918c23b51d8b8669df0b532c895fdc7b5f69ade6815"
 
       def install
         bin.install "gpt"
       end
     end
     on_arm do
-      url "https://github.com/dave/gpt/releases/download/v0.3.4/gpt_0.3.4_darwin_arm64.tar.gz"
-      sha256 "0218fa60dcca3ce7196fc5d44b89a5b6df1a1bf724ec4a6774f4b0a2462842af"
+      url "https://github.com/dave/gpt/releases/download/v0.3.5/gpt_0.3.5_darwin_arm64.tar.gz"
+      sha256 "ea7f831eafddd68c839687ea9e302218762b033237ea8c4b23e32ac1553ae425"
 
       def install
         bin.install "gpt"
@@ -29,8 +29,8 @@ class Gpt < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/dave/gpt/releases/download/v0.3.4/gpt_0.3.4_linux_amd64.tar.gz"
-        sha256 "973c4bcd0df2a6592c731abaca9823d4f8086ae7f5e7d4b644f25b545dc1e6e6"
+        url "https://github.com/dave/gpt/releases/download/v0.3.5/gpt_0.3.5_linux_amd64.tar.gz"
+        sha256 "f78df3ff8956e2beecea734b21ac09f6ba39a87e47aa46f5cddda1800ac4ff84"
 
         def install
           bin.install "gpt"
@@ -39,8 +39,8 @@ class Gpt < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/dave/gpt/releases/download/v0.3.4/gpt_0.3.4_linux_arm64.tar.gz"
-        sha256 "9faa0236c42cb10bd2a84f2248ff65fbdf24398a0fc140de20ff7b73775ca002"
+        url "https://github.com/dave/gpt/releases/download/v0.3.5/gpt_0.3.5_linux_arm64.tar.gz"
+        sha256 "82cfd601832fa45b4f9bda54a32898ab40e82a90c82275b83e624294e6857f61"
 
         def install
           bin.install "gpt"
